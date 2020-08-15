@@ -1,0 +1,465 @@
+:root {
+    --primary-color: #aad400; /* rgb(170, 212, 0) */
+    --dark-gray: #434242; /* rgb(67, 66, 66) */
+    --whitish: #f2f2f8; /* rgb(242, 242, 248) */
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font: 62.5%/1.33 'Montserrat', sans-serif
+}
+
+body {
+    color: var(--dark-gray);
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    background-color: var(--whitish);
+}
+
+header {
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+}
+
+header .grid {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f2f2f8;
+}
+
+h2 {
+    letter-spacing: .8rem;
+    font-family: 'Russo One', sans-serif;
+    font-size: 3.79rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+hr {
+    background: none;
+    height: 0;
+    width: 97%;
+    max-width: 130rem;
+    margin: auto;
+    border: none;
+    border-bottom: 1px solid rgba(67, 66, 66, .14);
+}
+
+p {
+    line-height: 1.45;
+}
+
+p:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 0 1.6rem;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.grid__col {
+    flex: 1 1;
+}
+
+.logo__container {
+    flex-basis: 10rem;
+    flex-grow: 0;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.main-nav li {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.main-nav li a {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    color: transparent;
+    text-decoration: none;
+    padding: 1.4rem 2.4rem;
+    transition: all .3s ease-in-out;
+}
+
+.main-nav li a::before,
+.main-nav li a::after {
+    left: 0;
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.main-nav li a::before {
+    top: 0;
+    color: var(--whitish);
+}
+
+.main-nav li a::after {
+    top: 100%;
+    color: var(--primary-color);
+}
+
+.main-nav li::after {
+    content: '';
+    width: 0%;
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+    background-color: #aad400;
+    position: absolute;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+}
+
+.main-nav li a:hover::before {
+    top: -100%;
+}
+
+.main-nav li a:hover::after {
+    top: 0;
+}
+
+.main-nav li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.ver-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#banner {
+    width: 100%;
+    height: 76.8rem;
+    background-image: linear-gradient(rgba(170, 212, 0, 0.5), rgba(67, 66, 66, 0.5)), url(../imgs/banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+#banner .container {
+    width: 70%;
+    top: 50%;
+    color: var(--whitish);
+    text-align: center;
+    position: relative;
+    transform: translateY(-50%);
+}
+
+#banner h1 {
+    font-size: 5.052rem;
+    letter-spacing: .4rem;
+    font-family: 'Russo One', sans-serif;
+}
+
+#banner p {
+    font-size: 2.133rem;
+    margin: 1em 0;
+}
+
+#banner button {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: 300;
+    padding: 1.6rem 3.8rem;
+    color: var(--primary-color);
+    background: none;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    background-image: linear-gradient(120deg, transparent 50%, var(--primary-color) 50%);
+    background-size: 220% 100%;
+    background-position: left center;
+    transition: all .3s ease-in-out;
+}
+
+#banner button:hover {
+    color: var(--whitish);
+    background-position: right center;
+}
+
+#mission {
+    padding: 8rem 0;
+}
+
+.mission__container {
+    padding: 1.6rem;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    background-color: var(--white);
+    border-radius: 1.6rem;
+}
+
+.mission__fig {
+    width: 45%;
+    flex: 0 1 45%;
+    max-height: 50rem;
+    margin: -1.6rem 5% -1.6rem -1.6rem;
+}
+
+.mission__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mission__content {
+    max-width: 50%;
+    flex: 1 1 50%;
+    align-self: center;
+}
+
+#team {
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.team__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.team__member {
+    flex: 0 0 34rem;
+    max-width: 34rem;
+    height: 50rem;
+    padding: 3rem;
+    border-radius: 1.6rem;
+    background-color: var(--white);
+}
+
+.team__member:first-child {
+    margin-right: 6rem;
+}
+
+.team__photo {
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+}
+
+.team__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
+#gallery {
+    padding: 8rem 0;
+}
+
+#gallery h2 {
+    text-align: center;
+}
+
+.gallery__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery__picture {
+    flex: 0 1 33.33%;
+    width: 33.33%;
+    height: 40rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery__picture::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    transition: background .3s ease-in-out;
+}
+
+.gallery__picture:hover::before {
+    background: rgba(0, 0, 0, .2);
+}
+
+.gallery__picture:hover .gallery__img {
+    transform: scale(1.2);
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s ease-in-out;
+}
+
+#contact {
+    padding: 8rem 0;
+}
+
+#contact h3 {
+    text-transform: capitalize;
+    margin-bottom: 1.6rem;
+    font-weight: 700;
+}
+
+#contact ul {
+    list-style-type: none;
+}
+
+.contact__outer > li:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+.phone {
+    padding-left: 3rem;
+    font-size: 1.8rem;
+}
+
+.social-link {
+    padding-left: 3rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-link a {
+    color: currentColor;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid currentColor;
+    border-radius: .6rem;
+    transition: all .3s ease-in-out;
+}
+
+.social-link a:hover {
+    color: var(--primary-color);
+}
+
+.social-link li:not(:last-child) {
+    margin-right: 1rem;
+}
+
+footer {
+    padding: 7rem 0;
+    background-color: var(--white);
+}
+
+footer .container {
+    text-align: center;
+    border-top: rgba(67, 66, 66, .14);;
+}
+
+@media only screen and (max-width: 1024px) {
+    .gallery__picture {
+        flex: 0 1 50%;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        max-width: 9rem;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li a {
+        padding: 1rem 1.8rem;
+    }
+
+    #banner .container {
+        width: 100%;
+    }
+
+    .mission__container {
+        padding: 3rem;
+    }
+
+    .mission__fig {
+        display: none;
+    }
+
+    .mission__content {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .team__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team__member:not(:last-child) {
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+
+    .gallery__picture {
+        flex: 0 1 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .main-nav li a {
+        padding: 1rem 1rem;
+    }
+}
